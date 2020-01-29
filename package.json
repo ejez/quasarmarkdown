@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
+    "@quasar/quasar-app-extension-qmarkdown": "^1.0.21",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.10.0",
