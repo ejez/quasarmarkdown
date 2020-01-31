@@ -1,26 +1,19 @@
-# Quasarmarkdown (quasarmarkdown)
+# Markdown with Quasar
 
-A Quasar Framework app
+This project shows how to add markdown support to your quasar projects.
 
-## Install the dependencies
-```bash
-yarn
-```
+To learn how it is achieved, please compare repository `master` with the initial tag `v0.1.0`:
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+https://github.com/ejez/quasarmarkdown/compare/v0.1.0..master
 
-### Lint the files
-```bash
-yarn run lint
-```
+The added code is full of comments and explanations.
 
-### Build the app for production
-```bash
-quasar build
-```
+It is based on quasar extension [QMarkdown](https://quasarframework.github.io/quasar-ui-qmarkdown)
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+## Features
+
+- Use of vmd files with frontMatter and table of contents.
+
+- Use of frontMatter data (title, desc...) to set page meta tags using quasar meta plugin.
+
+- `Table of contents` component

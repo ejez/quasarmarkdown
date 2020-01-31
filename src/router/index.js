@@ -16,7 +16,17 @@ Vue.use(VueRouter)
 
 export default function (/* { store, ssrContext } */) {
   const Router = new VueRouter({
-    scrollBehavior: () => ({ x: 0, y: 0 }),
+    scrollBehavior (to, from, savedPosition) {
+      // scroll to anchor link if any
+      if (to.hash) {
+        return {
+          selector: to.hash
+        }
+      }
+      // scroll to previous position if any (if not scroll to top)
+      return savedPosition || { x: 0, y: 0 }
+    },
+
     routes,
 
     // Leave these as they are and change in quasar.conf.js instead!

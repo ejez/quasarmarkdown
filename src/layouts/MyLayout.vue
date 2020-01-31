@@ -26,6 +26,37 @@
       content-class="bg-grey-2"
     >
       <q-list>
+        <q-item
+          clickable
+          :to="'/'"
+          exact
+        >
+          <q-item-section avatar>
+            <q-icon name="house" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Home</q-item-label>
+            <q-item-label caption>
+              Home
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item
+          clickable
+          :to="`/contact`"
+          exact
+        >
+          <q-item-section avatar>
+            <q-icon name="message" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Contact us</q-item-label>
+            <q-item-label caption>
+              Contact us
+            </q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-item-label header>
           Essential Links
         </q-item-label>

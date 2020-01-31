@@ -6,6 +6,14 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+
+  meta () {
+    return {
+      // fallback metas when not defined elsewhere
+      title: 'Quasarmarkdown',
+      description: { name: 'description', content: 'A Quasar Framework app' }
+    }
+  }
 }
 </script>
