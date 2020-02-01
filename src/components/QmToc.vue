@@ -1,32 +1,59 @@
 <template>
+  <!-- We display the TOC only if it is not empty (v-if) and the screen is wide
+  enough (class: gt-xs). We apply a medium margin: 'q-ma-md' -->
   <q-card
+    v-if="tocTree.length"
+    class="gt-xs float-right q-ma-md"
     flat
     bordered
   >
-    <q-card-actions>
-      <q-btn
-        flat
-        class="full-width"
-        dense
-        no-caps
-        :icon="tocToggleIcon"
+    <!-- We use the 'horizontal' to remove paddings -->
+    <q-card-section horizontal>
+      <!-- We use 'q-expansion-item' to enable toggling (hide/show) the TOC -->
+      <q-expansion-item
+        default-opened
+        icon="toc"
         label="Table of contents"
-        @click="tocToggle"
-      />
-    </q-card-actions>
-    <q-separator />
-    <q-card-section v-show="!tocCollapsed">
-      <q-list>
-        <q-item
-          v-for="toc in tocData"
-          :key="toc.id"
-          clickable="clickable"
-          dense
-          :to="`#${toc.id}`"
-        >
-          <q-item-section>{{ toc.label }}</q-item-section>
-        </q-item>
-      </q-list>
+      >
+        <q-separator />
+        <q-list>
+          <!-- loop through items of tocTree -->
+          <template v-for="item in tocTree">
+            <!-- if the item does not have children we use 'q-item' -->
+            <q-item
+              v-if="!item.children.length"
+              :key="item.id"
+              :to="`#${item.id}`"
+            >
+              <q-item-section>{{ item.label }}</q-item-section>
+            </q-item>
+            <!-- if the item has children we use 'q-expansion-item' to enable
+            toggling (hiding/showing) them -->
+            <q-expansion-item
+              v-else
+              :key="item.id"
+              default-opened
+              :label="item.label"
+              :to="`#${item.id}`"
+            >
+              <!-- children are displayed in a q-list below their parent -->
+              <q-list>
+                <!-- each child is indented a little (inset-level).
+                Dense mode uses less space -->
+                <q-item
+                  v-for="childItem in item.children"
+                  :key="childItem.id"
+                  dense
+                  :inset-level="0.2"
+                  :to="`#${childItem.id}`"
+                >
+                  <q-item-section>{{ childItem.label }}</q-item-section>
+                </q-item>
+              </q-list>
+            </q-expansion-item>
+          </template>
+        </q-list>
+      </q-expansion-item>
     </q-card-section>
   </q-card>
 </template>
@@ -34,24 +61,18 @@
 <script>
 export default {
   props: {
-    tocData: {
+    // 'tocTree' will be provided by the component using QmToc (vmd components)
+    tocTree: {
       type: Array,
       default () { return [] }
-    }
-  },
-
-  data () {
-    return {
-      tocCollapsed: false,
-      tocToggleIcon: 'arrow_drop_up'
-    }
-  },
-
-  methods: {
-    tocToggle: function () {
-      this.tocCollapsed = !this.tocCollapsed
-      this.tocToggleIcon = this.tocCollapsed ? 'arrow_drop_down' : 'arrow_drop_up'
     }
   }
 }
 </script>
+
+<style lang="sass">
+// When navigating (scrolling) to an anchor and to avoid that the anchor gets
+// hidden by the fixed page header we offset the scrolling by the header height.
+.q-markdown [class^="q-markdown--heading-h"]
+  scroll-margin-top: $toolbar-min-height
+</style>

@@ -26,6 +26,7 @@
       content-class="bg-grey-2"
     >
       <q-list>
+        <!-- added links for testing -->
         <q-item
           clickable
           :to="'/'"

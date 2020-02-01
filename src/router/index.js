@@ -17,11 +17,11 @@ Vue.use(VueRouter)
 export default function (/* { store, ssrContext } */) {
   const Router = new VueRouter({
     scrollBehavior (to, from, savedPosition) {
-      // scroll to anchor link if any
       if (to.hash) {
-        return {
-          selector: to.hash
-        }
+        // scrolling to an anchor is buggy with vue-router, so we do it with the
+        // following instead
+        document.getElementById(to.hash.split('#')[1]).scrollIntoView({ behavior: 'smooth' })
+        return false
       }
       // scroll to previous position if any (if not scroll to top)
       return savedPosition || { x: 0, y: 0 }
