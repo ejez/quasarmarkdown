@@ -24,6 +24,7 @@
               v-if="!item.children.length"
               :key="item.id"
               :to="`#${item.id}`"
+              @click="onClick"
             >
               <q-item-section>{{ item.label }}</q-item-section>
             </q-item>
@@ -35,6 +36,7 @@
               default-opened
               :label="item.label"
               :to="`#${item.id}`"
+              @click="onClick"
             >
               <!-- children are displayed in a q-list below their parent -->
               <q-list>
@@ -46,6 +48,7 @@
                   dense
                   :inset-level="0.2"
                   :to="`#${childItem.id}`"
+                  @click="onClick"
                 >
                   <q-item-section>{{ childItem.label }}</q-item-section>
                 </q-item>
@@ -59,12 +62,33 @@
 </template>
 
 <script>
+import { scroll } from 'quasar'
+const { setScrollPosition } = scroll
+
 export default {
   props: {
     // 'tocTree' will be provided by the component using QmToc (vmd components)
     tocTree: {
       type: Array,
       default () { return [] }
+    }
+  },
+  methods: {
+    onClick (data) {
+      debugger
+      console.log(data)
+      this.scrollTo(data.toElement)
+    },
+    scrollTo (el) {
+      if (el) {
+        setTimeout(() => {
+          this.scrollPage(el)
+        }, 200)
+      }
+    },
+    scrollPage (el) {
+      const offset = el.offsetTop + el.parentNode.offsetTop - 50
+      setScrollPosition(window, offset, 500)
     }
   }
 }
