@@ -9,6 +9,7 @@ desc: Our contact details
   <q-markdown
     :src="markdown"
     toc
+    :toc-start="2"
     :toc-end="3"
     @data="onToc"
     ref="markdown"

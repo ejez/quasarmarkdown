@@ -1007,20 +1007,20 @@
   resolved "https://registry.yarnpkg.com/@quasar/fastclick/-/fastclick-1.1.4.tgz#21ed3e9a4387dcb43022a08af4ef08a5f1abf159"
   integrity sha512-i9wbyV4iT+v4KhtHJynUFhH5LiEPvAEgSnwMqPN4hf/8uRe82nDl5qP5agrp2el1h0HzyBpbvHaW7NB0BPrtvA==
 
-"@quasar/quasar-app-extension-qmarkdown@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qmarkdown/-/quasar-app-extension-qmarkdown-1.0.21.tgz#50965946b1aad7f3ef417a3618a342c26aeedc68"
-  integrity sha512-Dv9HgS4LWf3YoW4WxLn9MT2xZf/EVPsUNJmiyo1jHobLPF5n1BFrhX5Fk/SpfNqSUVpAUIibkB/OmI+f8KtUeA==
+"@quasar/quasar-app-extension-qmarkdown@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-app-extension-qmarkdown/-/quasar-app-extension-qmarkdown-1.0.22.tgz#0487ab84f8ced5e387adb5f40d7ef26eb4c3fd19"
+  integrity sha512-CbfmmffzlGfmyyGBnGDrkAtnaVAkm5pHqGyGcr9yFg9hC0dKz7UAReTWYxaDeKs0e4+GGp2P3OjM4bl4z+dhQQ==
   dependencies:
-    "@quasar/quasar-ui-qmarkdown" "^1.0.21"
+    "@quasar/quasar-ui-qmarkdown" "^1.0.22"
     front-matter "^3.1.0"
     raw-loader "^4.0.0"
     ware-loader "^0.2.4"
 
-"@quasar/quasar-ui-qmarkdown@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qmarkdown/-/quasar-ui-qmarkdown-1.0.21.tgz#418f07bd0f9dd90797236b1cb7a493045f61beb5"
-  integrity sha512-8Qgut5TQUrvF+JlKwRi3bnZW60ATPp6TDK4kj+k9+CSQ7TUN/CF7w0xfaRnUM4FjJiAsFZStVr4lgIVdHwVr1Q==
+"@quasar/quasar-ui-qmarkdown@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@quasar/quasar-ui-qmarkdown/-/quasar-ui-qmarkdown-1.0.22.tgz#dfaff319d0e3e1e725c4896a72f5a6ea7282d566"
+  integrity sha512-XtrWGpjwHCVs3Y2gXUxSmINAFz92NmLkGtlb05iIsKlopumiyd0IoBK5h626lJqDIgmdbxRFYrG+qPjBCbawUg==
   dependencies:
     markdown-it "^10.0.0"
     markdown-it-abbr "^1.0.4"
