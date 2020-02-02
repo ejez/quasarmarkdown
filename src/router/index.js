@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { scrollToElement } from 'src/utils/scroll'
 
 import routes from './routes'
 
@@ -20,7 +21,7 @@ export default function (/* { store, ssrContext } */) {
       if (to.hash) {
         // scrolling to an anchor is buggy with vue-router, so we do it with the
         // following instead
-        document.getElementById(to.hash.split('#')[1]).scrollIntoView({ behavior: 'smooth' })
+        scrollToElement({ el: document.querySelector(to.hash) })
         return false
       }
       // scroll to previous position if any (if not scroll to top)
