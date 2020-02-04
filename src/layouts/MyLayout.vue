@@ -86,7 +86,7 @@ export default {
 // When directly navigating to a url with an anchor, for example:
 // http://example.com/contact#Email, and to avoid that the anchor element gets
 // hidden by the page header we use the header height to set 'scroll-margin-top'
-//  in all anchor elements inside our page (elements with the 'id' attribute).
-.q-page-container [id]
+// of the target anchor element.
+.q-page-container :target
   scroll-margin-top: var(--header-height)
 </style>
