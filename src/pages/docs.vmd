@@ -1,0 +1,39 @@
+---
+title: Quasarmarkdown docs
+desc: Documentation for Quasarmarkdown project
+---
+
+<template>
+  <q-page>
+    <qm-toc :toc-tree="tocTree"></qm-toc>
+    <q-markdown
+      :src="markdown"
+      toc
+      :toc-start="2"
+      :toc-end="3"
+      @data="onToc"
+      ref="markdown"
+      class="q-pa-md"
+    />
+  </q-page>
+</template>
+
+<script>
+import mdMixin from 'src/md/md-mixin'
+import markdown from './docs.md'
+
+export default {
+  mixins: [mdMixin],
+
+  data () {
+    return {
+      // eslint-disable-next-line
+      frontMatter: {},
+      // eslint-disable-next-line
+      tocData: [],
+
+      markdown
+    }
+  }
+}
+</script>

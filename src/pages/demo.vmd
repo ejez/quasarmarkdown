@@ -1,6 +1,6 @@
 ---
-title: Contact us
-desc: Our contact details
+title: Quasarmarkdown demo
+desc: Demo for Quasarmarkdown project
 ---
 
 <template>
@@ -20,7 +20,7 @@ desc: Our contact details
 
 <script>
 import mdMixin from 'src/md/md-mixin'
-import markdown from './contact.md'
+import markdown from './demo.md'
 
 export default {
   mixins: [mdMixin],

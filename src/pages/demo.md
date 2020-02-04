@@ -1,4 +1,4 @@
-# Contact us
+# Demo
 
 ## Lorem ipsum
 
