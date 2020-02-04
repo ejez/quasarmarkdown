@@ -4,18 +4,18 @@ desc: Our contact details
 ---
 
 <template>
-<div>
-  <qm-toc :toc-tree="tocTree"></qm-toc>
-  <q-markdown
-    :src="markdown"
-    toc
-    :toc-start="2"
-    :toc-end="3"
-    @data="onToc"
-    ref="markdown"
-    class="q-pa-md"
-  />
-</div>
+  <q-page>
+    <qm-toc :toc-tree="tocTree"></qm-toc>
+    <q-markdown
+      :src="markdown"
+      toc
+      :toc-start="2"
+      :toc-end="3"
+      @data="onToc"
+      ref="markdown"
+      class="q-pa-md"
+    />
+  </q-page>
 </template>
 
 <script>

@@ -1,8 +1,10 @@
 import QmToc from 'components/QmToc'
+import { QPage } from 'quasar'
 
 export default {
   components: {
-    QmToc
+    QmToc,
+    QPage
   },
 
   // computed property 'tocTree' will be used by component 'QmToc' to build the

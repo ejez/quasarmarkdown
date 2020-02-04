@@ -7,7 +7,7 @@
     flat
     bordered
   >
-    <!-- We use the 'horizontal' to remove paddings -->
+    <!-- We use the 'horizontal' prop to remove paddings -->
     <q-card-section horizontal>
       <!-- We use 'q-expansion-item' to enable toggling (hide/show) the TOC -->
       <q-expansion-item
@@ -69,10 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-// When navigating (scrolling) to an anchor and to avoid that the anchor gets
-// hidden by the fixed page header we offset the scrolling by the header height.
-.q-markdown [class^="q-markdown--heading-h"]
-  scroll-margin-top: $toolbar-min-height
-</style>

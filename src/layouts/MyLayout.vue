@@ -1,5 +1,8 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout
+    view="lHh Lpr lFf"
+    :style="layoutStyles"
+  >
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -172,8 +175,27 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      leftDrawerOpen: false,
+      layoutStyles: {}
     }
+  },
+
+  mounted () {
+    // get header element
+    const header = document.querySelector('header.q-header')
+    // define a css variable that contains the header height
+    this.layoutStyles['--header-height'] = header
+      ? `${header.offsetHeight}px`
+      : 0
   }
 }
 </script>
+
+<style lang="sass">
+// When directly navigating to a url with an anchor, for example:
+// http://example.com/contact#Email, and to avoid that the anchor element gets
+// hidden by the page header we use the header height to set 'scroll-margin-top'
+//  in all anchor elements inside our page (elements with the 'id' attribute).
+.q-page-container [id]
+  scroll-margin-top: var(--header-height)
+</style>
