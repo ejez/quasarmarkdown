@@ -14,7 +14,9 @@ export default {
       // notice also that we removed the 'title' and 'meta description' tags
       // from 'src/index.template.html' to avoid having duplicates
       title: 'Quasarmarkdown',
-      description: { name: 'description', content: 'A Quasar Framework app' }
+      meta: {
+        description: { name: 'description', content: 'A Quasar Framework app' }
+      }
     }
   }
 }
